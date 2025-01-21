@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Inline JavaScript
+    </title>
+</head>
+
+<body>
+    <h2 id="hi">
+        Adding JavaScript in HTML Document
+    </h2>
+
+    <button onclick="alert('Button Clicked!')">
+        Click Here
+    </button>
+    <button onclick="window.print()">Print this page</button>
+
+    <script>
+        document.getElementById("hi").innerHTML= "Change";  //h2 changed
+        document.write("Hello Geeks!");
+        window.alert(5 + 6);
+
+        console.log("Hello Geeks!");
+    </script>
+</body>
+
+</html>
