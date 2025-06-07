@@ -32,3 +32,18 @@ str = "human";
 var main1 = "I am " + str + " And so you all are ";
 console.log(main1);        //I am human And so you all are
 
+/find length
+var s_len=0;
+var first_n="Ram";
+s_len= first_n.length;
+console.log(s_len);    //3
+
+//access through indexes
+console.log(first_n[1]);    //a
+
+//immutability
+var str3= "hi ram";
+str3[1]= "p";
+console.log(str3);   //hi ram
+
+console.log(str3 [str3.length-1]);        //m
