@@ -1,0 +1,36 @@
+var arr = ["Joe",5,6];
+console.log(arr);            //[ 'Joe', 5, 6 ]
+
+//nested array
+var arr1 = ["Joe",[5,"kite"],6];
+console.log(arr1);          //[ 'Joe', [ 5, 'kite' ], 6 ]
+
+//access data
+console.log(arr[1]);        //5
+
+//modify data
+arr[1] = "Foe";
+console.log(arr);           //[ 'Joe', 'Foe', 6 ]
+
+//access nested array elements
+console.log(arr1[0][1]);    //o
+
+// push() - add elements at last
+arr.push(100);
+console.log(arr);           //[ 'Joe', 'Foe', 6, 100 ]
+
+//pop() - deletes last element
+arr.pop();
+console.log(arr);          //[ 'Joe', 'Foe', 6 ]
+
+//shift() - deletes first element
+arr.shift();
+console.log(arr);          //[ 'Foe', 6 ]
+
+//unshift() - add elements at the starting
+arr.unshift(100);
+console.log(arr);          //[ 100, 'Foe', 6 ]
+
+//list
+var mylist = [["milk",4],["apple",8]];
+console.log(mylist);       //[ [ 'milk', 4 ], [ 'apple', 8 ] ]
