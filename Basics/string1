@@ -1,0 +1,34 @@
+// var str = "myname";
+// console.log(str);
+
+// // var mystr= "I am "I" ";  error
+
+// var mystr = "I am \"Vedi\" ";    // I am "Vedi" 
+// console.log(mystr);
+
+// var str2 = 'I am "Vedi" ';
+// console.log(str2);            // I am "Vedi" 
+
+// var str3 = `'I am "Vedi" '`;
+// console.log(str3);        //'I am "Vedi" '
+
+//Escape sequences example
+var mystr= "First Line\n\t Second Line\n\t Third Line";
+console.log(mystr);
+/*First Line 
+         Second Line 
+         Third Line*/
+
+//concatenating strings
+var name1= "VD";
+var str = "My name is ";
+str= str + name1; 
+console.log(str);          //My name is VD
+//+= operator
+name1+= " No one";
+console.log(name1);       //VD No one
+
+str = "human";
+var main1 = "I am " + str + " And so you all are ";
+console.log(main1);        //I am human And so you all are
+
