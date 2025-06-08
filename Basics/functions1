@@ -1,0 +1,29 @@
+//basic function
+function print1(){
+    console.log("Hiiii");
+}
+print1();          //Hiiii
+
+//passing values
+function diff(a,b){
+    return a-b;
+}
+console.log(diff(5,2));      //3
+
+//global scope
+var myg =5;
+function fun1(){
+    fakeg=9;
+}
+function fun2(){
+    var op="";
+    if(typeof myg != "undefined"){
+        op+= "myg" + myg;
+    }
+    if(typeof fakeg != "undefined"){
+        op+= "fakeg" + fakeg;
+    }
+    console.log("OP :"+op);           //OP :myg5fakeg9
+}
+fun1();
+fun2();
