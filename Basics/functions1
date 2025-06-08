@@ -27,3 +27,34 @@ function fun2(){
 }
 fun1();
 fun2();
+
+//local scope
+function test(){
+    var local=8;
+    console.log(local);
+}
+test();        //8
+// console.log(local);           ReferenceError: local is not defined
+
+//global vs local
+var g1=6;
+function test2(){
+   var g1=9;
+    return g1;
+}
+console.log(test2());     //9
+console.log(g1);          //6
+
+//undefined return vlue from a function
+var sum=0;
+function test3(){
+    sum+=9;
+}
+console.log(test3());              // undefined
+
+//boolean return type
+function f4(){
+if(9>7){
+    return true;
+}} 
+console.log(f4());                  //true
