@@ -1,0 +1,40 @@
+
+//comparison with equality operator
+function equal(val){
+    if(val==12)
+        return "Equal";
+    else
+       return "Not";
+}
+console.log(equal(12));                          //Equal
+console.log(equal("12"));                       //Equal
+
+//comparison with strict equality operator
+function sequal(val){
+    if(val===12)
+        return "Equal";
+    else
+       return "Not";
+}
+console.log(sequal(12));                     //Equal
+console.log(sequal("12"));                   //Not
+
+//comparison with inequality operator
+function iequal(val){
+    if(val!=12)
+        return "Not";
+    else
+       return "Equal";
+}
+console.log(iequal(12));                          //Equal
+console.log(iequal("12"));                       //Equal
+
+//comparison with strict inequality operator
+function isequal(val){
+    if(val!==12)
+        return "Not";
+    else
+       return "Equal";
+}
+console.log(isequal(12));                          //Equal
+console.log(isequal("12"));                       //Not
