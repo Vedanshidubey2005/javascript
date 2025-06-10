@@ -1,0 +1,30 @@
+function switch1(val){
+    var ans = "";
+    switch(val){
+        case 1:
+            ans= "alpha";
+            break;
+
+         case 2:
+            ans= "beta";
+            break;
+        
+         case 3:
+            ans= "gamma";
+            break;
+
+         case 4:
+         case 5:             //case 4 and 5 will both have same answers
+            ans= "delta";
+            break;
+            
+        default:
+            ans ="enter correct val";
+            break;
+    }
+    return ans;
+}
+console.log(switch1(3));    //gamma
+console.log(switch1(13));   //enter correct val
+console.log(switch1(4));    //delta
+console.log(switch1(5));    //delta
