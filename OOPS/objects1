@@ -1,0 +1,35 @@
+//An object is a collection of properties, and a property is an association between a name (or key) and a value. A property's value can be a function, in which case the property is known as a method.
+var dog1 = {
+    "name" : "tom",
+     "legs": 4 ,
+     "tails" : 1,
+     "friends": ["ira", "dira"] 
+};
+
+//accessing objects property
+// Dot notation --> objectName.propertyName
+// Bracket nitation --> objectName["propertyName"]
+
+var dogname = dog1.name;
+var doglegs = dog1["legs"]; 
+console.log(dogname);        //tom
+console.log(doglegs);        //4
+
+//updating
+dog1.name="jerry";
+console.log(dog1.name);       //jerry
+
+//add properties
+dog1.color = "white";
+console.log(dog1);  
+// {
+//   name: 'jerry',
+//   legs: 4,
+//   tails: 1,
+//   friends: [ 'ira', 'dira' ],
+//   color: 'white'
+// }
+
+//delete
+delete dog1.color;
+
