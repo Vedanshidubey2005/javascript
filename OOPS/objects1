@@ -12,6 +12,7 @@ var dog1 = {
 
 var dogname = dog1.name;
 var doglegs = dog1["legs"]; 
+
 console.log(dogname);        //tom
 console.log(doglegs);        //4
 
@@ -32,4 +33,5 @@ console.log(dog1);
 
 //delete
 delete dog1.color;
-
+console.log(dog1);
+//{ name: 'jerry', legs: 4, tails: 1, friends: [ 'ira', 'dira' ] }
