@@ -1,0 +1,125 @@
+//use instead of switch case
+function lookup(val){
+    var result ="";
+    var lookup = {
+        "alpha" : "america",
+        "beta" : "boston",
+        "gamma": "greenland",
+        "delta": "denmark"
+    };
+    result = lookup[val];
+    return result;
+}
+console.log(lookup("beta"));           //boston
+
+var lookup = {
+        "alpha" : "america",
+        "beta" : "boston",
+        "gamma": "greenland",
+        "delta": "denmark"
+    };
+//check properties
+function checkobj(checkprop){
+    if(lookup.hasOwnProperty(checkprop)){
+        return lookup[checkprop];
+    }
+    else{
+        return "not found";
+    }
+}
+console.log(checkobj("kappa"));        //not found
+console.log(checkobj("gamma"));        //greenland
+
+//complex objects
+//array of obejcts , variables
+var mymusic = [{
+    "artist": "ED",
+    "title": "gold",
+    "release-year": 2008,
+    "formats":[
+        "cd", "LP"
+    ],
+    "gold" : true
+},
+//new record
+
+{
+    //like before
+}
+];
+
+//accessing complex objects
+var mygarage ={
+  "cars":{
+    "inside":{
+        "model"  : "new",
+        "rate": "high"
+  },
+  "outside":{
+    "passenger":3
+  }
+    }
+};
+
+var rate_d = mygarage.cars.inside["rate"];
+console.log(rate_d);      //high
+
+//accessing nested arrays
+var myplants = [
+{ 
+       type : "flowers",
+       list : ["rose","tulip","lily"]
+},
+{ 
+       type : "trees",
+       list : ["birch","pine"]
+}
+];
+var new_o= myplants[1].list[0];
+console.log(new_o);                    //birch
+
+//record collection and updation
+var collection = 
+{
+    "2345" :{
+        "album":"new",
+        "artist":"VV",
+        "tracks":["let me live","go to hell"]
+    },
+    "1145" :{
+        "album":"old",
+        "artist":"KK",
+        
+    },
+    "2871" :{
+        
+        "artist":"SD",
+        "tracks":["Stereo hearts","goodbye"]
+    }
+};
+var coll_copy = JSON.parse(JSON.stringify(collection)); // copy of collection
+
+function updaterecords(id,prop,val){
+  if(val===""){
+    delete collection[id][prop];
+  }
+  else if (prop==="tracks"){
+    collection[id][prop]= collection[id][prop] || [];
+    collection[id][prop].push(val);
+  }
+  else{
+    collection[id][prop]=val;
+  }
+  return collection;
+}
+
+console.log(updaterecords("2871","artist", "AAA"))
+// {
+//   '1145': { album: 'old', artist: 'KK' },
+//   '2345': {
+//     album: 'new',
+//     artist: 'VV',
+//     tracks: [ 'let me live', 'go to hell' ]
+//   },
+//   '2871': { artist: 'AAA', tracks: [ 'Stereo hearts', 'goodbye' ] }
+// }
