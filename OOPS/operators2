@@ -1,0 +1,96 @@
+//rest operators: helps u create a function that can take variable parameters
+
+// const sum = (function(){
+//     return function sum(x,y,z){
+//         const args = [x,y,z];
+//         return args.reduce((a,b) => a+b);
+//     };
+// })();
+// console.log(sum(1,2,3));    //6
+// console.log(sum(1,2,3,4));   //6 ==> wrong
+
+const sum = (function(){
+    return function sum(...args){
+        
+        return args.reduce((a,b) => a+b);
+    };
+})();
+console.log(sum(1,2,3,4));      //10
+
+//use spread operator
+// const arr1 = ["vedanshi",20,"Female",2005];
+// let arr2;
+// (function(){
+//     arr2 = arr1;
+//     arr1[0]= "nia";
+// })();
+// console.log(arr1);
+// console.log(arr2);
+// [ 'nia', 20, 'Female', 2005 ]     //arr2 is also changed
+// [ 'nia', 20, 'Female', 2005 ]
+
+const arr1 = ["vedanshi",20,"Female",2005];
+let arr2;
+(function(){
+    arr2 = [...arr1];
+    arr1[0]= "nia";
+})();
+console.log(arr1);
+console.log(arr2);
+// [ 'nia', 20, 'Female', 2005 ]       //arr1 is changed becoz we wanted to but arr2 is the prev copy of arr1
+// [ 'vedanshi', 20, 'Female', 2005 ]
+
+//destructuring assignments to assign variables from objects
+
+var v=[2.4,6.5,3.5,2.5];
+// var x= v.x;
+// var y =v.y;
+// var z = v.z;
+const {x:a, y:b, z:c} = v;
+
+const AVG_T ={
+    today : 78.2,
+    tomorrow :79
+};
+function get_tomT(avg_temp){
+    const {tomorrow : tomT} = avg_temp;
+    return tomT;
+}
+console.log(get_tomT(AVG_T));     //79
+
+//with nested objects
+const FORECAST ={
+    today : {min: 78.2,max : 80.6},
+    tomorrow :{min:79, max : 82.3}
+};
+function get_tomMax(temp){
+    const {tomorrow :{max: tomMax}} = temp;
+    return tomMax;
+}
+console.log(get_tomMax(FORECAST));    ///82.3
+
+//use destructuring to assign variables from array 
+// const [z,x]= [1,2,3,4,5,6,7,8,9,10];
+// console.log(z,x);    // 1 2
+
+const [z,x, ,y]= [1,2,3,4,5,6,7,8,9,10];
+console.log(z,x,y);    // 1 2 4
+
+let f =6 , g= 8;
+(()=>{
+    [f,g]= [g,f];
+})();
+console.log(f,g);     // 8 6
+
+//destructuring with rest 
+
+const arr3=[1,2,3,4,5,6];
+function newarr(list1){
+const[ , , ...arr3]= list1;
+return arr3;
+}
+const arr4 = newarr(arr3);
+console.log(arr3);
+console.log(arr4);
+// [ 1, 2, 3, 4, 5, 6 ]
+// [ 3, 4, 5, 6 ]
