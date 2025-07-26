@@ -34,3 +34,15 @@ console.log(arr);          //[ 100, 'Foe', 6 ]
 //list
 var mylist = [["milk",4],["apple",8]];
 console.log(mylist);       //[ [ 'milk', 4 ], [ 'apple', 8 ] ]
+
+//for of
+let marks=[81,98,84,96,67,72];
+for(let no in marks){
+    console.log(marks[no]);
+}
+// 81
+// 98
+// 84
+// 96
+// 67
+// 72
